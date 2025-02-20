@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Curated Links</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  .container {
+    width: 80%;
+    max-width: 960px;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 30px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    display: block; /* Make the whole line clickable */
+    padding: 10px 0; /* Add padding for better touch/click area */
+  }
+
+  a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+
+  .link-description {
+    color: #777;
+    font-size: 0.9em;
+    margin-top: 5px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #f0f0f0;
+    margin-top: 40px;
+  }
+
+</style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>My Curated Links</h1>
+    <ul id="urlList">
+      </ul>
+  </div>
+
+  <footer>
+    <p>&copy; [Your Name/Website Name] - Links Collection</p>
+  </footer>
+
+  <script>
+    const urls = [
+      { url: "https://www.google.com", description: "The world's most popular search engine." },
+      { url: "https://www.example.com", description: "A generic example website." },
+      { url: "https://www.wikipedia.org", description: "The free encyclopedia." },
+      { url: "https://www.github.com", description: "Where developers build software." },
+      {url: "https://developer.mozilla.org/en-US/", description: "MDN Web Docs: Resources for web developers"},
+      {url: "https://stackoverflow.com/", description: "A question and answer site for professional and enthusiast programmers."}
+
+    ];
+
+    const urlList = document.getElementById("urlList");
+
+    urls.forEach(item => {
+      const listItem = document.createElement("li");
+      const link = document.createElement("a");
+      link.href = item.url;
+      link.textContent = item.url;
+      link.target = "_blank";
+
+      const description = document.createElement('div');
+      description.classList.add('link-description');
+      description.textContent = item.description;
+
+      listItem.appendChild(link);
+      listItem.appendChild(description);
+      urlList.appendChild(listItem);
+    });
+  </script>
+
+</body>
+</html>
