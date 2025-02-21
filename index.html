@@ -82,159 +82,515 @@
 
   <script>
     const urls = [
-       { url: "https://www.google.com", description: "The world's most popular search engine." },
-    { url: "https://www.example.com", description: "A generic example website." },
-    { url: "https://www.wikipedia.org", description: "The free encyclopedia." },
-    { url: "https://www.github.com", description: "Where developers build software." },
-    { url: "https://developer.mozilla.org/en-US/", description: "MDN Web Docs: Resources for web developers" },
-    { url: "https://stackoverflow.com/", description: "A question and answer site for professional and enthusiast programmers." },
-    { url: "https://www.acp-gruppe.com/de-de/webshop", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/de-de/standorte", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/de-de/karriere", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/de-de/ueber-acp/das-management", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/de-de/ueber-acp/das-unternehmen", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/de-de/news-hub", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/de-de/portfolio", description: "ACP" },
-    { url: "//www.acp-gruppe.com/de-de/hybridcloud-datacenter", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/ueber-acp/das-unternehmen", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/webshop", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/de-at/webshop", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/standorte", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/karriere", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/de-at/standorte", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/de-at/ueber-acp/das-management", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/news-hub", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/de-at/portfolio", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/de-at/karriere", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/de-at/news-hub", description: "ACP" },
-    { url: "//www.acp-gruppe.com/de-at/hybridcloud-datacenter", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/hybridcloud-datacenter", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/de-at/modern-workplace", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/de-at/hybridcloud-datacenter", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/de-at/network-security", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/network-security", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/digital-solutions", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/portfolio", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/de-at/auszeichnungen", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/referenzen", description: "ACP" },
-    { url: "//www.acp-gruppe.com/modern-workplace", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/modern-workplace", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/referenzentag/modern-workplace", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/auszeichnungen", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/de-at/blog", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/threat-ticker", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/blog", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/kontakt", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/ueber-acp/zahlen-fakten", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/de-de/ueber-acp/zahlen-fakten", description: "ACP" },
-    { url: "//www.acp-gruppe.com/de-de/modern-workplace", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/de-de/hybridcloud-datacenter", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/de-de/modern-workplace", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/de-de/network-security", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/de-de/network-security/it-security", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/de-de/managed-services/network-security/managed-firewall", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/de-de/managed-services/cloud-datacenter/vcloud", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/de-de/managed-services/cloud-datacenter/managed-backup-recovery", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/de-de/managed-services/managed-application/managed-m365", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/de-de/managed-services/managed-application/managed-application-delivery", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/de-de/partner/apple/managed-workplace", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/de-de/partner/apple/business-manager", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/de-de/partner/apple/devices", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/de-de/partner/apple/services", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/de-de/blog/tag/apple", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/de-de/auszeichnungen", description: "ACP" },
-    { url: "//www.acp.at/webshop", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/impressum", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/datenschutz", description: "ACP" },
-    { url: "https://www.acp-gruppe.com/en/datenschutz", description: "ACP" },
-    { url: "/de-at/karriere/tirol", description: "ACP" },
-    { url: "/de-at/karriere/tirol/systems-engineer", description: "ACP" }, { url: "https://www.google.com", description: "The world's most popular search engine." },
-  { url: "https://www.acp-gruppe.com/de-de/karriere/blog/frauen-in-der-it-interview-mit-junior-systems-engineer-ivona-1", description: "Interview mit Junior Systems Engineer Ivona über Frauen in der IT." },
-  { url: "https://www.acp-gruppe.com/de-de/karriere/blog/author/theresa-huber", description: "Blogbeiträge von Theresa Huber." },
-  { url: "https://www.acp-gruppe.com/de-at/karriere/blog/author/theresa-huber", description: "Blogbeiträge von Theresa Huber." },
-  { url: "https://www.acp-gruppe.com/de-at/karriere/blog/claudia-erzählt-wie-sie-beruf-und-familie-in-einklang-bringt", description: "Claudia erzählt, wie sie Beruf und Familie in Einklang bringt." },
-  { url: "https://www.acp-gruppe.com/de-at/karriere/blog/author/claudia-kohlmann", description: "Blogbeiträge von Claudia Kohlmann." },
-  { url: "https://www.acp-gruppe.com/de-at/karriere/blog/acp-em-tippspiel-2024", description: "Informationen zum ACP EM Tippspiel 2024." },
-  { url: "https://www.acp-gruppe.com/hubfs/Image%20(4).jpg", description: "Bilddatei." },
-  { url: "https://www.acp-gruppe.com/hubfs/20231219_182601.jpg", description: "Bilddatei." },
-  { url: "https://www.acp-gruppe.com/hubfs/Medien%20(1).jpg", description: "Bilddatei." },
-  { url: "https://www.acp-gruppe.com/hubfs/Image%20(5).jpg", description: "Bilddatei." },
-  { url: "https://www.acp-gruppe.com/hubfs/Medien%20(2).jpg", description: "Bilddatei." },
-  { url: "https://www.acp-gruppe.com/de-at/referenzen", description: "Referenzen der ACP Gruppe in Österreich." },
-  { url: "https://www.acp-gruppe.com/de-at/karriere/salzburg/benefits", description: "Benefits für Mitarbeiter am Standort Salzburg." },
-  { url: "https://www.acp-gruppe.com/de-at/karriere/salzburg/standort", description: "Informationen zum Standort Salzburg." },
-  { url: "https://www.acp-gruppe.com/de-at/karriere/salzburg/nachhaltigkeit", description: "Nachhaltigkeitsinitiativen am Standort Salzburg." },
-  { url: "https://www.acp-gruppe.com/de-at/karriere/salzburg/videos", description: "Videos vom Standort Salzburg." },
-  { url: "https://www.acp-gruppe.com/standorte/mueritz/digital-business-solutions", description: "Informationen zu Digital Business Solutions am Standort Müritz." },
-  { url: "/hubfs/Datenschutzhinweise_Informationspflichten%20-%20ACP%20Digital%20Business%20Solutions%20AG%2c%20Jena-1.pdf", description: "Datenschutzhinweise für ACP Digital Business Solutions AG, Jena (PDF)." },
-  { url: "https://www.acp-gruppe.com/standorte/siegen", description: "Informationen zum Standort Siegen." },
-  { url: "https://www.acp-gruppe.com/hubfs/Datenschutzhinweise_Informationspflichten%20-%20ACP%20Holding%20Deutschland%20GmbH.pdf", description: "Datenschutzhinweise für ACP Holding Deutschland GmbH (PDF)." },
-  { url: "https://www.acp-gruppe.com/standorte/st-poelten", description: "Informationen zum Standort St. Pölten." },
-  { url: "https://www.acp-gruppe.com/standorte/st-poelten/servicecenter", description: "Informationen zum Servicecenter in St. Pölten." },
-  { url: "https://www.acp-gruppe.com/standorte/traun/tekaef", description: "Informationen zu Tekaef am Standort Traun." },
-  { url: "https://www.acp-gruppe.com/standorte/traun/it-solutions", description: "Informationen zu IT Solutions am Standort Traun." },
-  { url: "https://www.acp-gruppe.com/standorte/ulm", description: "Informationen zum Standort Ulm." },
-  { url: "/hubfs/Datenschutzhinweise_Informationspflichten%20-%20ACP%20IT%20Solutions%20GmbH%2c%20Stuttgart-1.pdf", description: "Datenschutzhinweise für ACP IT Solutions GmbH, Stuttgart (PDF)." },
-  { url: "https://www.acp-gruppe.com/standorte/wien/digital-business-applications", description: "Informationen zu Digital Business Applications am Standort Wien." },
-  { url: "https://www.acp-gruppe.com/standorte/wien/acp-group-ag", description: "Informationen zu ACP Group AG am Standort Wien." },
-  { url: "https://www.acp-gruppe.com/standorte/wien/holding", description: "Informationen zur Holding am Standort Wien." },
-  { url: "https://www.acp-gruppe.com/standorte/wien/it-solutions", description: "Informationen zu IT Solutions am Standort Wien." },
-  { url: "https://www.acp-gruppe.com/standorte/wien/mcwerk", description: "Informationen zu McWerk am Standort Wien." },
-  { url: "https://www.acp-gruppe.com/standorte/wien/techrent", description: "Informationen zu TechRent am Standort Wien." },
-  { url: "https://www.acp-gruppe.com/standorte/wien/tekaef", description: "Informationen zu Tekaef am Standort Wien." },
-  { url: "https://www.acp-gruppe.com/standorte/wien/doit", description: "Informationen zu DoIT am Standort Wien." },
-  { url: "https://www.acp-gruppe.com/standorte/wien/it-solutions-servicecenter", description: "Informationen zum IT Solutions Servicecenter am Standort Wien." },
-  { url: "https://www.acp-gruppe.com/standorte/wiener-neustadt", description: "Informationen zum Standort Wiener Neustadt." },
-  { url: "https://www.acp-gruppe.com/standorte/wuerzburg", description: "Informationen zum Standort Würzburg." },
-  { url: "/hubfs/Datenschutzhinweise_Informationspflichten%20-%20ACP%20IT%20Solutions%20GmbH%2c%20W%C3%BCrzburg.pdf", description: "Datenschutzhinweise für ACP IT Solutions GmbH, Würzburg (PDF)." },
-  { url: "https://www.acp-gruppe.com/de-at/news-und-events/datenmanagement-von-hpe-neu-gedacht", description: "Artikel über neu gedachte Datenmanagement-Lösungen von HPE." },
-  { url: "https://www.acp-gruppe.com/de-at/news-und-events/acp-wien-setzt-auf-doppelgeschaeftsfuehrung", description: "Artikel über die neue Doppelgeschäftsführung bei ACP Wien." },
-  { url: "https://www.acp-gruppe.com/de-at/news-und-events/bester-partner-2020-trend-micro", description: "Artikel über die Auszeichnung von ACP als bester Partner 2020 von Trend Micro." },
-  { url: "https://www.acp-gruppe.com/de-at/news-und-events/acp-digital-und-cloudrail-industrial-iot", description: "Artikel über die Partnerschaft von ACP Digital und CloudRail im Bereich Industrial IoT." },
-  { url: "https://www.google.com", description: "Die beliebteste Suchmaschine der Welt." },
-  { url: "https://www.acp-gruppe.com/de-de/karriere/blog/frauen-in-der-it-interview-mit-junior-systems-engineer-ivona-1", description: "Interview mit Junior Systems Engineer Ivona über Frauen in der IT." },
-  { url: "https://www.acp-gruppe.com/de-de/karriere/blog/author/theresa-huber", description: "Blogbeiträge von Theresa Huber." },
-  { url: "https://www.acp-gruppe.com/de-at/karriere/blog/author/theresa-huber", description: "Blogbeiträge von Theresa Huber." },
-  { url: "https://www.acp-gruppe.com/de-at/karriere/blog/claudia-erzählt-wie-sie-beruf-und-familie-in-einklang-bringt", description: "Claudia erzählt, wie sie Beruf und Familie in Einklang bringt." },
-  { url: "https://www.acp-gruppe.com/de-at/karriere/blog/author/claudia-kohlmann", description: "Blogbeiträge von Claudia Kohlmann." },
-  { url: "https://www.acp-gruppe.com/de-at/karriere/blog/acp-em-tippspiel-2024", description: "Informationen zum ACP EM Tippspiel 2024." },
-  { url: "https://www.acp-gruppe.com/hubfs/Image%20(4).jpg", description: "Bilddatei." },
-  { url: "https://www.acp-gruppe.com/hubfs/20231219_182601.jpg", description: "Bilddatei." },
-  { url: "https://www.acp-gruppe.com/hubfs/Medien%20(1).jpg", description: "Bilddatei." },
-  { url: "https://www.acp-gruppe.com/hubfs/Image%20(5).jpg", description: "Bilddatei." },
-  { url: "https://www.acp-gruppe.com/hubfs/Medien%20(2).jpg", description: "Bilddatei." },
-  { url: "https://www.acp-gruppe.com/de-at/referenzen", description: "Referenzen der ACP Gruppe in Österreich." },
-  { url: "https://www.acp-gruppe.com/de-at/karriere/salzburg/benefits", description: "Benefits für Mitarbeiter am Standort Salzburg." },
-  { url: "https://www.acp-gruppe.com/de-at/karriere/salzburg/standort", description: "Informationen zum Standort Salzburg." },
-  { url: "https://www.acp-gruppe.com/de-at/karriere/salzburg/nachhaltigkeit", description: "Nachhaltigkeitsinitiativen am Standort Salzburg." },
-  { url: "https://www.acp-gruppe.com/de-at/karriere/salzburg/videos", description: "Videos vom Standort Salzburg." },
-  { url: "https://www.acp-gruppe.com/standorte/mueritz/digital-business-solutions", description: "Informationen zu Digital Business Solutions am Standort Müritz." },
-  { url: "/hubfs/Datenschutzhinweise_Informationspflichten%20-%20ACP%20Digital%20Business%20Solutions%20AG%2c%20Jena-1.pdf", description: "Datenschutzhinweise für ACP Digital Business Solutions AG, Jena (PDF)." },
-  { url: "https://www.acp-gruppe.com/standorte/siegen", description: "Informationen zum Standort Siegen." },
-  { url: "https://www.acp-gruppe.com/hubfs/Datenschutzhinweise_Informationspflichten%20-%20ACP%20Holding%20Deutschland%20GmbH.pdf", description: "Datenschutzhinweise für ACP Holding Deutschland GmbH (PDF)." },
-  { url: "https://www.acp-gruppe.com/standorte/st-poelten", description: "Informationen zum Standort St. Pölten." },
-  { url: "https://www.acp-gruppe.com/standorte/st-poelten/servicecenter", description: "Informationen zum Servicecenter in St. Pölten." },
-  { url: "https://www.acp-gruppe.com/standorte/traun/tekaef", description: "Informationen zu Tekaef am Standort Traun." },
-  { url: "https://www.acp-gruppe.com/standorte/traun/it-solutions", description: "Informationen zu IT Solutions am Standort Traun." },
-  { url: "https://www.acp-gruppe.com/standorte/ulm", description: "Informationen zum Standort Ulm." },
-  { url: "/hubfs/Datenschutzhinweise_Informationspflichten%20-%20ACP%20IT%20Solutions%20GmbH%2c%20Stuttgart-1.pdf", description: "Datenschutzhinweise für ACP IT Solutions GmbH, Stuttgart (PDF)." },
-  { url: "https://www.acp-gruppe.com/standorte/wien/digital-business-applications", description: "Informationen zu Digital Business Applications am Standort Wien." },
-  { url: "https://www.acp-gruppe.com/standorte/wien/acp-group-ag", description: "Informationen zu ACP Group AG am Standort Wien." },
-  { url: "https://www.acp-gruppe.com/standorte/wien/holding", description: "Informationen zur Holding am Standort Wien." },
-  { url: "https://www.acp-gruppe.com/standorte/wien/it-solutions", description: "Informationen zu IT Solutions am Standort Wien." },
-  { url: "https://www.acp-gruppe.com/standorte/wien/mcwerk", description: "Informationen zu McWerk am Standort Wien." },
-  { url: "https://www.acp-gruppe.com/standorte/wien/techrent", description: "Informationen zu TechRent am Standort Wien." },
-  { url: "https://www.acp-gruppe.com/standorte/wien/tekaef", description: "Informationen zu Tekaef am Standort Wien." },
-  { url: "https://www.acp-gruppe.com/standorte/wien/doit", description: "Informationen zu DoIT am Standort Wien." },
-  { url: "https://www.acp-gruppe.com/standorte/wien/it-solutions-servicecenter", description: "Informationen zum IT Solutions Servicecenter am Standort Wien." },
-  { url: "https://www.acp-gruppe.com/standorte/wiener-neustadt", description: "Informationen zum Standort Wiener Neustadt." },
-  { url: "https://www.acp-gruppe.com/standorte/wuerzburg", description: "Informationen zum Standort Würzburg." },
-  { url: "/hubfs/Datenschutzhinweise_Informationspflichten%20-%20ACP%20IT%20Solutions%20GmbH%2c%20W%C3%BCrzburg.pdf", description: "Datenschutzhinweise für ACP IT Solutions GmbH, Würzburg (PDF)." },
-  { url: "https://www.acp-gruppe.com/de-at/news-und-events/datenmanagement-von-hpe-neu-gedacht", description: "Artikel über neu gedachte Datenmanagement-Lösungen von HPE." },
-  { url: "https://www.acp-gruppe.com/de-at/news-und-events/acp-wien-setzt-auf-doppelgeschaeftsfuehrung", description: "Artikel über die neue Doppelgeschäftsführung bei ACP Wien." },
-  { url: "https://www.acp-gruppe.com/de-at/news-und-events/bester-partner-2020-trend-micro", description: "Artikel über die Auszeichnung von ACP als bester Partner 2020 von Trend Micro." },
-  { url: "https://www.acp-gruppe.com/de-at/news-und-events/acp-digital-und-cloudrail-industrial-iot", description: "Artikel über die Partnerschaft von ACP Digital und CloudRail im Bereich Industrial IoT." },
-
+      {url:"https://www.acp-gruppe.com/standorte/jena/portfolio", description :"ACP"}
+{url:"https://www.acp-gruppe.com/standorte/jena/it-infrastruktur-consulting/", description :"ACP"}
+{url:"https://www.acp-gruppe.com/standorte/jena/projektmanagement", description :"ACP"}
+{url:"https://www.acp-gruppe.com/standorte/jena/zentrale-it/", description :"ACP"}
+{url:"https://www.acp-gruppe.com/standorte/jena/modern-workplace", description :"ACP"}
+{url:"https://www.acp-gruppe.com/standorte/jena/netzwerk-security", description :"ACP"}
+{url:"https://www.acp-gruppe.com/standorte/jena/portfolio/business-cloud", description :"ACP"}
+{url:"https://www.acp-gruppe.com/standorte/jena/support-service", description :"ACP"}
+{url:"https://www.acp-gruppe.com/standorte/jena/portfolio/expert-on-demand", description :"ACP"}
+{url:"https://www.acp-gruppe.com/standorte/jena/support-service/monitoring", description :"ACP"}
+{url:"https://www.acp-gruppe.com/standorte/jena/portfolio/rechenzentrum/", description :"ACP"}
+{url:"https://www.acp-gruppe.com/standorte/jena/magazin", description :"ACP"}
+{url:"https://www.acp-gruppe.com/standorte/jena/kundensupport", description :"ACP"}
+{url:"https://www.acp-gruppe.com/standorte/jena/ueber-uns", description :"ACP"}
+{url:"https://www.acp-gruppe.com/standorte/jena/engagement/", description :"ACP"}
+{url:"https://www.acp-gruppe.com/standorte/jena/zertifizierungen", description :"ACP"}
+{url:"https://www.acp-gruppe.com/standorte/jena/ueber-uns/chronik", description :"ACP"}
+{url:"https://www.acp-gruppe.com/standorte/jena/kontakt", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/1990_Memobord-Namensfindung-495x400.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/1991_Glueckwunschkarte-Antirutschsocken-zum-Geburtstag-495x400.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/1994_CeBit-GODYO-Story-3.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/1994_CeBit-GODYO-Story-2.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/1994_CeBit-GODYO-Story-1.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/1992-12_Pruessingstrasse-25-GODYO-Story.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/1993_Baracke-7-GODYO-Story.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/1993_Baracke-7_2-GODYO-Story.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/1993_Baracke-7_3-GODYO-Story.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/1993-01_Pruessingstrasse-25-GODYO-Story.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/1993-01_Pruessingstrasse-25_2-GODYO-Story.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/1993-06_Pruessingstrasse-25_das-waren-mal-unsere-Bueros-GODYO-Story.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/1993-06_Pruessingstrasse-25_das-waren-mal-unsere-Bueros_2-GODYO-Story.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/1993-07_Wiedereinzug-in-die-Pruessingstrasse-25-GODYO-Story.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/1993-07_Wiedereinzug-in-die-Pruessingstrasse-25_2-GODYO-Story.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/1996-04-26_Aufstellung-Bauschild-GODYO-Story.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/1996-04-29_erster-Spatenstich-GODYO-Story.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/1996-05-14_Baustelle-GODYO-Story.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/1996-05-14_Baustelle-2-GODYO-Story.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/1996-08-09_Richtfest-GODYO-Story.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/Schluesseluebergabe_GODYO-Story.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/1997_Mutige-Unternehmer-braucht-das-Land-3-GODYO-Story-1.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/1997_Mutige-Unternehmer-braucht-das-Land-GODYO-Story-1.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/1997_Mutige-Unternehmer-braucht-das-Land-2-GODYO-Story-1.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2000-09-29_Planetarium-1-GODYO-Story.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2000-09-29_Planetarium-2-GODYO-Story.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2000-09-29_Festveranstaltung-im-Esplanade-10-Jahre-GODYO-Story.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2000-09-29_Agenda-Jubilaeumsfeier-GODYO-Story.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2000-09-16_Firmenausflug-Dresden-2-GODYO-Story.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2000-09-16_Firmenausflug-Dresden-GODYO-Story.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2010_20-Jahre-GODYO-Hausmesse-10.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2010_20-Jahre-GODYO-Hausmesse-7.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2010_20-Jahre-GODYO-Hausmesse.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2010_20-Jahre-GODYO-Hausmesse-4.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2010_20-Jahre-GODYO-Hausmesse-5.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2010_20-Jahre-GODYO-Hausmesse-2.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2010_20-Jahre-GODYO-Hausmesse-3.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2010_20-Jahre-GODYO-Hausmesse-6.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2010_20-Jahre-GODYO-Hausmesse-8.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2010_20-Jahre-GODYO-Hausmesse-9.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2010_20-Jahre-GODYO-Festveranstaltung.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2010_20-Jahre-GODYO-Festveranstaltung-2.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2010_20-Jahre-GODYO-Festveranstaltung-3.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2010_20-Jahre-GODYO-Festveranstaltung-7.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2010_20-Jahre-GODYO-Festveranstaltung-4.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2010_20-Jahre-GODYO-Festveranstaltung-5.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2010_20-Jahre-GODYO-Festveranstaltung-6.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2013_GODYO-Neujahrsempfang-GODYO-Story.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2013_GODYO-Neujahrsempfang-Uschi-Reich-GODYO-Story.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2015_Hausmesse-25-Jahre-3-GODYO-Story.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2015_Hausmesse-25-Jahre-2-GODYO-Story.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2015_Hausmesse-25-Jahre-GODYO-Story.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2015_Festveranstaltung-25-Jahre-6-GODYO-Story.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2015_Festveranstaltung-25-Jahre-GODYO-Story.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2015_Festveranstaltung-25-Jahre-5-GODYO-Story.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2015_Festveranstaltung-25-Jahre-2-GODYO-Story.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2015_Festveranstaltung-25-Jahre-4-GODYO-Story.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2015_Festveranstaltung-25-Jahre-3-GODYO-Story.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2016_10-Jahre-GODYO-Drachenboot-Sprint-GODYO-Story.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2016_10-Jahre-GODYO-Drachenboot-Sprint-2-GODYO-Story.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2016_10-Jahre-GODYO-Drachenboot-Sprint-3-GODYO-Story.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2018_25-Jahre-ACP-Bild_3.png", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2018_25%20Jahre%20ACP.jpg", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/25-Jahre-ACP-Bild_1-800x430-1.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/25-Jahre-ACP-Bild_5-800x430-1.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/25-Jahre-ACP-Bild_4-800x430-1.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2021-10_GODYO-Baumpflanzaktion%20Cospoth%20-%20GODYO-Story.jpg", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2021-10_GODYO-Baumpflanzaktion%20Cospoth%203-%20GODYO-Story.jpg", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2021-10_GODYO-Baumpflanzaktion%20Cospoth%202-%20GODYO-Story.jpg", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2021-10_GODYO-Baumpflanzaktion%20Cospoth%204%20-%20GODYO-Story.jpg", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2021-10_GODYO-Baumpflanzaktion%20Cospoth%206%20-%20GODYO-Story.jpg", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2021-10_GODYO-Baumpflanzaktion%20Cospoth%205-%20GODYO-Story.jpg", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2021-10_GODYO-Baumpflanzaktion%20Cospoth%207%20-%20GODYO-Story.jpg", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2022_Umbau-Rechenezentrum_2.jpg", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2022_Umbau-Rechenezentrum_3.jpg", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2022_Umbau-Rechenezentrum_1.jpg", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/2023_30-Jahre-ACP_5-1.jpg", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2023_30-Jahre-ACP_4.jpg", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2023_30-Jahre-ACP_1.jpg", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2023_30-Jahre-ACP_2.jpg", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/Chronik/2023_30-Jahre-ACP_3.jpg", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hs-fs/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/DSC4014_Fotor-webp.webp?width=1200&name=DSC4014_Fotor-webp.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hs-fs/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/MicrosoftTeams-image-8-1_Fotor-1030x518-webp.webp?width=1200&name=MicrosoftTeams-image-8-1_Fotor-1030x518-webp.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hs-fs/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/DSC4015_Fotor-webp.webp?width=1200&name=DSC4015_Fotor-webp.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hs-fs/hubfs/admin-ajax.png?width=1200&name=admin-ajax.png", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hs-fs/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/MicrosoftTeams-image-4_Fotor.png?width=1200&name=MicrosoftTeams-image-4_Fotor.png", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hs-fs/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Bilder/IMG_0172_Fotor-webp.webp?width=1200&name=IMG_0172_Fotor-webp.webp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Flyer/GODYO-Magazin/godyo_magazin_15_Screen_20230503_lhb.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Flyer/GODYO-Magazin/godyo_magazin_14_web.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Flyer/GODYO-Magazin/GODYO-Magazin-Ausgabe-13.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Flyer/GODYO-Magazin/godyo_magazin_12_web.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Flyer/GODYO-Magazin/godyo_magazin_11_final_screen.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Flyer/GODYO-Magazin/godyo_magazin_ausgabe_10.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Flyer/GODYO-Magazin/godyo_magazin_ausgabe_09.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Flyer/GODYO-Magazin/godyo_magazin_ausgabe_08.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Flyer/GODYO-Magazin/godyo_magazin_ausgabe_07.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Flyer/GODYO-Magazin/godyo_magazin_ausgabe_06.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Flyer/GODYO-Magazin/godyo_magazin_ausgabe_05.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Flyer/GODYO-Magazin/godyo_magazin_ausgabe_04.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Flyer/GODYO-Magazin/godyo_magazin_ausgabe_03.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Flyer/GODYO-Magazin/godyo_magazin_ausgabe_02.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Flyer/GODYO-Magazin/godyo_magazin_ausgabe_01.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Flyer/ACP-JEN_Flyer_RZ_web.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Flyer/ACP-JEN_Flyer_Monitoring_web.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Flyer/ACP-JEN_Flyer_Expert-on-Demand_web.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Flyer/ACP-JEN_Flyer_IT-Service_web.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Flyer/ACP-JEN_Business-cloud%204-seitig_web.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/standorte/jena/blog/individuelle-wlan-vermessung-visualisierung-und-planung", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20IT%20Solutions%20-%20Jena/Webseite%20-%20Flyer/ACP-JEN_WLAN-Ausleuchtung_web.pdf/de-de/blog / vmware - uebernahme - durch - broadcom", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/blog/tag/virtualisierung", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/blog/vmware-uebernahme-durch-broadcom", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/blog/tag/nutanix", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/blog/tag/vmware", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/blog/author/frank-scheliga/de-de/news - und - events / brainshare_rhein - main/ hubfs / ACP % 20Events / 2020 / AHD / DE_MNZ_Events / BrainShare % 202024 / Gel % C3 % A4ndeplan_Zufahrt_Tiefgarage_EFE.pdf/ hubfs / ACP % 20Events / 2020 / AHD / DE_MNZ_Events / BrainShare % 202024 / Tiefgarage % 20Deutsche % 20Bank % 20Park % 20 -% 20Beschreibung % 20mit % 20Bildern.pdf/ hubfs / ACP % 20Events / 2020 / AHD / DE_MNZ_Events / BrainShare % 202024 / Deutsche % 20Bank % 20Park_Gel % C3 % A4ndeplan.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Events/2020/AHD/DE_MNZ_Events/BrainShare%202024/Video-W%C3%BCrfel.png", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Events/2020/AHD/DE_MNZ_Events/BrainShare%202024/DSC04937.jpg", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Events/2020/AHD/DE_MNZ_Events/BrainShare%202024/DSC05886.jpg", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Events/2020/AHD/DE_MNZ_Events/BrainShare%202024/DSC04534.jpg", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Events/2020/AHD/DE_MNZ_Events/BrainShare%202024/DSC06085.jpg", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Events/2020/AHD/DE_MNZ_Events/BrainShare%202024/DSC05964.jpg", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Events/2020/AHD/DE_MNZ_Events/BrainShare%202024/DSC04339.jpg", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Events/2020/AHD/DE_MNZ_Events/BrainShare%202024/DSC04930.jpg", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Events/2020/AHD/DE_MNZ_Events/BrainShare%202024/DSC05381.jpg/de-de/blog / sophos - ndr", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/blog/tag/sophos", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/blog/sophos-mdr-for-micrsoft-defender", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/blog/author/sebastian-polster", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/blog/sophos-ndr/de-de/partner / sophos", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/partner/sophos", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/partner/sophos/mdr", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/partner/sophos/mdr-for-defender", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/partner/sophos/ndr", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/Sophos-NDR-Datenblatt-2023.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/Sophos-MDR-Defender-Datenblatt-2023.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/partner/microsoft", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/partner/microsoft/mvp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/partner/microsoft/green-cloud", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/partner/microsoft/cloud-journey", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/partner/microsoft/cloud-basics", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/partner/microsoft/cloud-optimierung", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/partner/microsoft/cloud-automatisierung", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/partner/microsoft/cloud-managedservices", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/partner/microsoft/surface", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/partner/microsoft/surface/devices", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/partner/microsoft/surface/zubehoer", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/partner/microsoft/surface/hub", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/partner/microsoft/surface/waas", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/partner/microsoft/eos-win10", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/partner/microsoft/windows", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/partner/microsoft/collaboration", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/partner/microsoft/management", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/partner/microsoft/365", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/partner/microsoft/csp-partner", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/partner/microsoft/copilot", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/partner/microsoft/azure", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/partner/microsoft/endpoint-security", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/partner/microsoft/azure-security", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/partner/microsoft/zero-trust", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/partner/microsoft/siem-soc", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/partner/microsoft/services/workshops", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/partner/microsoft/kontakt", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/partner/microsoft/services/workshops/modern-workplace", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP_Flyer_Microsoft_CloudBigPicture.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Microsoft%20Business/Microsoft%20Workshop%20Flyer%202022/ACP_Flyer_Microsoft_TeamsCalling.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Microsoft%20Business/Microsoft%20Workshop%20Flyer%202022/ACP_Flyer_Microsoft_TeamsDirectRouting.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Microsoft%20Business/Microsoft%20Workshop%20Flyer%202022/ACP_Flyer_Microsoft_WindowsAutopilot.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Microsoft%20Business/Microsoft%20Workshop%20Flyer%202022/ACP_Flyer_Microsoft_AzureVirtualDesktop.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Microsoft%20Business/Microsoft%20Workshop%20Flyer%202022/ACP_Flyer_Microsoft_WaaS.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Microsoft%20Business/DE%20ACP_Meeting%20Rooms.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Microsoft%20Business/Microsoft%20Workshop%20Flyer%202022/ACP_Flyer_Microsoft_CloudAdoption.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/partner/microsoft/services/workshops/hybrid-cloud", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Microsoft%20Business/Microsoft%20Workshop%20Flyer%202022/ACP_Flyer_Microsoft_AzureEssentials.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Microsoft%20Business/Microsoft%20Workshop%20Flyer%202022/ACP_Flyer_Microsoft_AzureAdvanced.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Microsoft%20Business/Microsoft%20Workshop%20Flyer%202022/ACP_Flyer_Microsoft_ComplianceCheck.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Microsoft%20Business/Microsoft%20Flyer%202024/15032024_ACP_microsoft_fyler_azure_virtual_desktop.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Microsoft%20Business/Microsoft%20Workshop%20Flyer%202022/ACP_Flyer_Microsoft_AzureGovernance.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Microsoft%20Business/Microsoft%20Flyer%202024/30012024_ACP_microsoft_fyler_deaster_recovery.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Microsoft%20Business/Microsoft%20Flyer%202024/30012024_ACP_microsoft_fyler_azure.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/partner/microsoft/services/workshops/network-security", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Microsoft%20Business/Microsoft%20Workshop%20Flyer%202022/ACP_Flyer_Microsoft_SecureWorkplace.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Microsoft%20Business/Microsoft%20Workshop%20Flyer%202022/ACP_Flyer_Microsoft_CSAT.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Microsoft%20Business/ACP_MSFT_Security%20Check%20Up.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Microsoft%20Business/Microsoft%20Flyer%202024/30012024_ACP_microsoft_fyler_sentinel.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-de/partner/microsoft/services/workshops/digital-solutions", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Microsoft%20Business/Microsoft%20Workshop%20Flyer%202022/ACP_Flyer_Microsoft_DataBasedBusiness.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Microsoft%20Business/Microsoft%20Workshop%20Flyer%202022/ACP_Flyer_Microsoft_BusinessIntelligence.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Microsoft%20Business/Microsoft%20Workshop%20Flyer%202022/ACP_Flyer_Microsoft_DataJourney.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/partner/microsoft/copilot", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/partner/microsoft/mvp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/partner/microsoft/lizenzen", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/partner/microsoft/security", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/partner/microsoft/security/defender365", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/partner/microsoft/security/zerotrust", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/partner/microsoft/security/sentinel", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/partner/microsoft/security/self-assessment", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/partner/microsoft/m365", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/partner/microsoft/m365/business", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/partner/microsoft/m365/enterprise", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/partner/microsoft/m365/education", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/partner/microsoft/teams", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/partner/microsoft/surface", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/partner/microsoft/surface/devices", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/partner/microsoft/surface/hub3", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/partner/microsoft/zubehör", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/hybridcloud-datacenter/avdbyacp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/hybridcloud-datacenter/hybridcloud-journey", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/hybridcloud-datacenter/solutions/azure-basis-landingzone", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/hybridcloud-datacenter/consulting-services", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/hybridcloud-datacenter/hybrid-cloud-assessments-workshops", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/hybridcloud-datacenter/professional-services", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/hybridcloud-datacenter/managed-services", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/hybridcloud-datacenter/cloud-managed-services", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/financial-services", description :"ACP"}
+//www.acp-gruppe.com/hybrid-cloud-datacenter
+{url:"https://www.acp-gruppe.com/de-at/blog/tag/hybrid-cloud-datacenter", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/tag/apple", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/tag/citrix", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/tag/cloud", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/tag/digital-solutions", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/tag/digitaler-arbeitsplatz", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/tag/digitalisierung", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/tag/hp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/tag/hpe", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/tag/human-ressource-management", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/tag/hybrid-it", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/tag/industrie-produktion", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/tag/lenovo", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/tag/managed-services", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/tag/microsoft", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/tag/modern-workplace", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/tag/nachhaltigkeit", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/tag/network-security", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/tag/samsung", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/tag/security", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/backup-und-recovery-so-schuetzen-sie-sich-vor-cyberangriffen", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/tag/cybercrime", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/warum-investitionen-in-neue-sicherheitsprodukte-alleine-nicht-ausreichen", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/author/robert-geiger", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/interview-mit-sascha-prock-von-lisec/referenzen/lisec", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/lisec/de-at/blog / ki - pcs - revolutionieren - das - homeoffice", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/tag/ki", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/ki-pcs-revolutionieren-das-homeoffice", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/tag/amd", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/kuenstliche-intelligenz-am-modern-workplace", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/tag/künstliche-intelligenz", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/workstations-und-künstliche-intelligenz-treiber-der-digitalen-transformation", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/author/heidi-fiedler", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/thin-clients-im-homeoffice-5-vorteile-für-it-abteilungen/de-at/blog / it - remarketing - entlastung - fuer - budget - und - umwelt", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/tag/finanzierung", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/it-remarketing-entlastung-fuer-budget-und-umwelt", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/tag/remarketing", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/author/elzana-suljevic", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/drei-gründe-warum-it-as-a-service-nicht-nur-das-budget-sondern-auch-die-umwelt-schont/portfolio/sgf / hybrid - cloud - datacenter / hpe / storage - solution / greenlake", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hybrid-cloud-datacenter", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/hybrid-cloud-datacenter", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/eisbaer-eis-infrastruktur-backup", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Nord%20-%20Diverses/ACP%20Nord%20-%20Referenzen/ACP_Referenz_Eisb%C3%A4r_IT_Infrastruktur_lang_11_24_RZ.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/mehrere-it-partner", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/konsum-fmcg", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/deutschland", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/76-bis-750-pcs", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/eisbaer-eis-ms-exchange", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Nord%20-%20Diverses/ACP%20Nord%20-%20Referenzen/ACP_Referenz_Eisb%C3%A4r_Mail_Exchange_11_24_RZ.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/modern-workplace", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/microsoft", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/solvena/hubfs/Referenz_Solvena / ACP_Referenz_Solvena.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/azure", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/pharma-gesundheit", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/dr-mach/hubfs/KOL % 20Marketing / ACP_Referenz_Dr_Mach_ANSICHT.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/hpe", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/dorst-technologies/hubfs/KOL % 20Marketing / ACP_Referenz_Dorst_lang_03_24_RZ_ANSICHT.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/industrie-produktion", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/smart-factory-lösungen-bei-fränkische-rohrwerke", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/digital-solutions", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/bruendl-sports", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/handel", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/österreich", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/firstpeak-aktivhotel-zauchensee", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/FIRSTpeak_Aktivhotel_Zauchensee%20-%20ACP%20Referenz.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/network-security", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/eisbaer-eis-security", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Nord%20-%20Diverses/ACP%20Nord%20-%20Referenzen/ACP_Referenz_Eisb%C3%A4r_IT_Security_lang_09_24_RZ.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/darktrace", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/ot-security", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/sophos", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/tourismus-gastronomie", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/bis-75-pcs", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/kontora-managed-services/hubfs/ACP % 20Nord % 20 -% 20Diverses / ACP_Referenz_Kontora_lang_12_22_RZ.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/dell", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/janz-tec/hubfs/ACP % 20Nord % 20 -% 20Diverses / ACP % 20Nord % 20 -% 20Referenzen / ACP_Referenz_Janz_Tec_lang_07_24_RZ.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/acp-cloud", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/automatisierungstechnik", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/msg-systems-ag", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Gruppe/Referenzen/.msg/ACP_Referenz_msg.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/KOL%20Marketing/MSGxACP%20final3.mp4", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/dienstleistungen-handwerk", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/ab-750-pcs", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/universitaet-salzburg", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/öffentlichkeit-gesellschaft", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/stiftung-st-zeno", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP_Referenz_Stiftung-St-Zeno.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/fortinet", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/dje", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/finanzen-versicherungen-immobilien", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/grawe", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/netapp", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/mdw", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/bawag-psk", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/wertgarantie-social-intranet", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/haiilo", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/wertgarantie-firewall", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/bank99", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/wertgarantie-speicherarchitektur", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/wuestenrot-rollout", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/simmo", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/bawag-group", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/acp-graz", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/wolfram-bergbau", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/bau", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/heimat-oesterreich", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/cisco", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/bette-netzwerk-infrastruktur/hubfs/ACP % 20Nord % 20 -% 20Diverses / ACP_Referenz_Bette_Cisco_lang_06_23.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/metall-elektronik", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/the-mobility-house", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/bette-vdi", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/citrix", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/saubermacher", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/energie-umwelt", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/scheuch", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/baywa", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/brantner", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/akl", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/wirtschaft-politik", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/compass-gruppe-gmbh", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/wko-inhouse", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/woundwo", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/sobit", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/gemeinde-gmunden", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/bette-it-landschaft", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/digital-elektronik", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/sml", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/wolfvision", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/fill", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/hp-inc", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/zeitung-in-der-schule", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/managed-printing", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/vsachau", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/fill-mobile", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/fill-printing", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/sal", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/flemming-dental-netzwerk-infrastruktur", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/uniqa", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/jaw-sdwan", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/rofa-industrial-automation-ag", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/wiener-sozialdienste", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/vmware", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/vertretungsnetz", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/jaw-nwd", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/brg-reithmann", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/aruba", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/reichenau-netzwerk", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP_Referenz_Reichenaugem%C3%BCse_final.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/verein-vaget", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/microsoft365", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/dein-dental", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Nord%20-%20Diverses/ACP%20Nord%20-%20Referenzen/ACP_Referenz_DeinDental_lang_11_24_RZ.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/tenant-migration", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/zahnmedizin", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/elbcampus", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Nord%20-%20Diverses/ACP%20Nord%20-%20Referenzen/ACP_Referenz_Elbcampus_lang_07_2024.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/lnw", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/kanzlei-hohenauer-woell", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/ms-seefeld", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/neustart", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/rk-noe", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Referenzen%202022/Rotes%20Kreuz%20Nieder%C3%B6sterreich%20-%20RK%20N%C3%96/ACP_referenz_noerk_2022.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/sentinelone", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/mehr-als-5-000-pcs", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/zkw-group", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/case-study-rollout-services", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/acp%20case%20study%20rollout%20services.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/telekommunikation-it-consumer-electronics", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tisoware", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP_Referenz_Tisoware_lang.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/celonis-greenlake", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/auerswald", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/doka", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/acp-wien", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/europapier", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/bexity", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/verkehr-logistik", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/maßgeschneidertes-containermanagement-fuer-jettainer", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/schiebel", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/apple", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/haberkorn", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/birner", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/makita", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/anton-paar", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/chemie-rohstoffe", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/petrofer-infrastruktur-vxrail", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/dell-emc", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/adler-lacke", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Referenzen%202023/ADLER%20Lacke/ACP_referenz_ADLER.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/trenkwalder", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/maschinenring", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/agrarwirtschaft", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/molkerei-berchtesgadener-land", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/wuerth-handelsgesmbh", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/ksr", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/autefa", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/erzdioezese-wien", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/caritas", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/sos-kinderdorf-international", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/gemeinde-lustenau", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/adapa-group", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/elis-iaas", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Nord%20-%20Diverses/ACP_Referenz_Elis_lang_05_23_RZ.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/it-infrastruktur", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/textil-und-hygiene", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/goldschmaus-hpe-greenlake", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Nord%20-%20Diverses/ACP_Referenz_Goldschmaus_lang_04_23_RZ.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/barmherzigebrüder", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/klinikum-wolfenbuettel-it-security", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/heinzel-group", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/meggle", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/wuerth-hochenburger", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/marcopolo", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/kreis-lippe", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/flughafen-linz", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/hans-im-glueck", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tischlerei-dermayrhofer", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/innos", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/adeolino", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/suzuki", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/amynova", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/clownprojekt", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/gema-technik", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/schauer-agrotronic-gmbh", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/abatec", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/wpk", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/sportalm", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/wpk-at", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/breitschopf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/bkh-reutte", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/ki-produkterkennung-für-herth-und-buss-fahrzeugteile", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/cloud-platform-herth-und-buss-fahrzeugteile", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/ACP%20Digital_Referenz_Herth%2BBuss.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/intamin", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/acp-feldbach", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/rhodius", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/case-study-hpe-alletra/hubfs/ACP_Projektreferenz_HPE_Alletra_kurz_04_24_RZ - 2.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/storage", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/maschinenbau", description :"ACP"}
+{url:"https://www.acp-gruppe.com/referenzen/tag/hpe-alletra/de-at/blog / image - durch - technik - coole - laptops - für - anspruchsvolle - mitarbeiterinnen", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/author/hamdija-trnjanin", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blog/image-durch-technik-coole-laptops-für-anspruchsvolle-mitarbeiterinnen/modern-workplace/mobile - as - a - service", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/modern-workplace/branchen/maschinenbau-bauwesen", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/modern-workplace/branchen/finanzwesen", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/modern-workplace/communication-collaboration/unified-communications-telefonie-video-conferencin", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/modern-workplace/use-cases/security", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/modern-workplace/use-cases/fachkraeftemangel", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/modern-workplace/kleinunternehmen", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/modern-workplace/laptops-desktops", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/partner/apple", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/partner/apple/business-manager", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/partner/apple/devices", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/partner/apple/services", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/partner/apple/edu", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/blogapple", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/modern-workplace/managed-services", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/partner/dell", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/partner/dell/latitude", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/partner/dell/xps", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/partner/dell/poweredge", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/partner/dell/azurestackhci", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/partner/dell/zubehoer", description :"ACP"}
+{url:"https://www.acp-gruppe.com/de-at/partner/dell/monitore", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/dell-24-monitor-e2424hs-datasheet.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/dell-34-curved-monitor-p3424we-datasheet.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/dell-55-4k-conference-room-monitor-p5524q-datasheet.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/dell-ultrasharp-38-curved-usb-c-hub-monitor-u3824dw%201.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/dell-performance-dock-wd19dcs-data-sheet.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/dell_multi_device_wireless_keyboard_and_mouse_combo_km7120w_data_sheet.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/dell-speakerphone-multiport-adapter-mh3021p-product-guide.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/dell-ultrasharp-webcam-reviewers-guide.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/poweredge-r660-spec-sheet.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/poweredge-r760-spec-sheet.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/Dell_EMC_PowerEdge_R940_Spec_Sheet.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/xps-17-9730-spec-sheet.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/xps-15-9530-spec-sheet.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/xps-13-plus-9320-spec-sheet-13th-gen.pdf", description :"ACP"}
+{url:"https://www.acp-gruppe.com/hubfs/xps-13-2-in-1-9315-2n1-5g-spec-sheet.pdf", description :"ACP"}
     ];
 
     const urlList = document.getElementById("urlList");
